@@ -1,0 +1,5 @@
+BASE_URL = "https://stellarburgers.education-services.ru/"
+TEST_NAME =  "TestUser"
+INVALID_PASSWORD = "12345"
+EMAIl = "1234asdzxc@yandex.ru"
+PASSWORD = "123456"
