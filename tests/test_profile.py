@@ -4,22 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from data import BASE_URL, EMAIl, PASSWORD
 from locators import LoginPageLocators, MainPageLocators, PersonalAccountPageLocators
-
-def close_google_popup(driver):
-    try:
-        driver.switch_to.alert.accept()
-    except:
-        pass
-
-def login(driver):
-    close_google_popup(driver)
-    driver.get(BASE_URL + "login")
-
-    WebDriverWait(driver, 10).until(EC.visibility_of_element_located(LoginPageLocators.EMAIL_INPUT)).send_keys(EMAIl)
-    driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(PASSWORD)
-    driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
-
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_LINK))
+from helpers import close_google_popup, login
 
 def test_go_to_personal_account(driver: WebDriver):
     login(driver)

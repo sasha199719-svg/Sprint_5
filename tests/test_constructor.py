@@ -3,13 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from data import BASE_URL
 from locators import MainPageLocators
-
-
-def open_main(driver):
-    driver.get(BASE_URL)
-
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located(MainPageLocators.BUNS_TAB))
-
+from helpers import open_main
 
 def test_switch_to_sauces(driver):
     open_main(driver)
